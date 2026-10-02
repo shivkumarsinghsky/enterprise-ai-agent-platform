@@ -1,0 +1,29 @@
+# Agent platform API. Offline model by default (no API key needed).
+#   docker compose up -d --build        → http://localhost:8000/docs
+# Real model: set LLM_PROVIDER=openai and OPENAI_API_KEY (or OPENAI_BASE_URL for Ollama/vLLM) in .env.
+# Local model: docker compose --profile ollama up -d, then OPENAI_BASE_URL=http://ollama:11434/v1, LLM_MODEL=llama3.1
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-offline}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      API_KEYS: '{"dev-tech-key-001": {"tenant": "acme", "user": "tara", "roles": ["technician"]}, "dev-supervisor-01": {"tenant": "acme", "user": "sam", "roles": ["supervisor"]}, "dev-viewer-key-01": {"tenant": "acme", "user": "vic", "roles": ["viewer"]}}'
+    ports: ["${API_PORT:-8000}:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/ready')"]
+      interval: 10s
+      retries: 5
+
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest
+    ports: ["${OLLAMA_PORT:-11434}:11434"]
+    volumes: [ollama:/root/.ollama]
+
+volumes:
+  ollama:
