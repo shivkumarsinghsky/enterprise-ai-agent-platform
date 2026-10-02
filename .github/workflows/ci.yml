@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker compose config -q
-      - run: docker build -f docker/Dockerfile -t enterprise-ai-agent-plateform:ci .
+      - run: docker build -f docker/Dockerfile -t enterprise-ai-agent-platform:ci .
 
   docs:
     runs-on: ubuntu-latest

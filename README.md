@@ -1,6 +1,6 @@
 # Enterprise AI Agent Platform — LangGraph Agents With Tools, RAG, Memory and Human-in-the-Loop
 
-[![CI](https://github.com/shivkumarsinghsky/enterprise-ai-agent-plateform/actions/workflows/ci.yml/badge.svg)](https://github.com/shivkumarsinghsky/enterprise-ai-agent-plateform/actions/workflows/ci.yml)
+[![CI](https://github.com/shivkumarsinghsky/enterprise-ai-agent-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/shivkumarsinghsky/enterprise-ai-agent-platform/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![LangGraph](https://img.shields.io/badge/LangGraph-orchestration-1c3c3c)
 ![LangChain](https://img.shields.io/badge/LangChain-tool%20calling-1c3c3c)
@@ -103,7 +103,7 @@ Details — nodes, human-in-the-loop sequence, memory, reliability, security, co
 ## Repository Structure
 
 ```text
-enterprise-ai-agent-plateform/
+enterprise-ai-agent-platform/
 ├── src/agent_platform/
 │   ├── graph.py            # LangGraph workflow: guard → route → agent ⇄ tools → finalize
 │   ├── agents.py           # agent specs, tool registration, routing, RouteDecision schema
@@ -122,8 +122,8 @@ enterprise-ai-agent-plateform/
 ## Getting Started
 
 ```bash
-git clone https://github.com/shivkumarsinghsky/enterprise-ai-agent-plateform.git
-cd enterprise-ai-agent-plateform
+git clone https://github.com/shivkumarsinghsky/enterprise-ai-agent-platform.git
+cd enterprise-ai-agent-platform
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
@@ -277,7 +277,7 @@ Not implemented yet:
 - [RAG Enterprise Assistant](https://github.com/shivkumarsinghsky/rag-enterprise-assistant) — full RAG pipeline: chunking, hybrid retrieval, pgvector, evaluation
 - [System Design Architecture](https://github.com/shivkumarsinghsky/system-design-architecture) — [Enterprise AI Platform design](https://github.com/shivkumarsinghsky/system-design-architecture/blob/main/docs/designs/12-enterprise-ai-platform.md)
 - [EAM Platform Architecture](https://github.com/shivkumarsinghsky/eam-platform-architecture) — the work order API contract used by the operations agent
-- [Enterprise SaaS Platform](https://github.com/shivkumarsinghsky/enterprise-saas-plateform) — tenant isolation, RBAC and audit logging
+- [Enterprise SaaS Platform](https://github.com/shivkumarsinghsky/enterprise-saas-platform) — tenant isolation, RBAC and audit logging
 
 ## Author
 

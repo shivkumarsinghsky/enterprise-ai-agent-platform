@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "enterprise-ai-agent-plateform"
+name = "enterprise-ai-agent-platform"
 version = "1.0.0"
 description = "Enterprise AI agent platform reference implementation: LangGraph orchestration, tool calling with authorization, RAG, memory, human-in-the-loop approvals, guardrails, structured outputs and tracing"
 authors = [{ name = "Shiv Kumar" }]
